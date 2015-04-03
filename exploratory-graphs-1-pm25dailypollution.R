@@ -5,7 +5,7 @@ box = function(pollution) {
 }
 
 bar = function(pollution) {
-  barplot(table(pollution$region), col = 'wheat', 
+  barplot(table(pollution$region), col = 'wheat',
           main = "Number of counties in Each Region")
 }
 
@@ -14,7 +14,7 @@ histo = function(pollution) {
   hist(subset(pollution, region == 'east')$pm25, col = 'green')
   hist(subset(pollution, region == 'west')$pm25, col = 'green')
   #hist(pollution$pm25, col = 'green', breaks = 50)
-  #rug(pollution$pm25)  
+  #rug(pollution$pm25)
 }
 
 scatter = function(pollution) {
@@ -24,10 +24,10 @@ scatter = function(pollution) {
   abline(h = 12, lwd = 2, lty = 2)
 }
 
-pollution = read.csv('data/avgpm25.csv', colClasses = 
+pollution = read.csv('data/avgpm25.csv', colClasses =
                        c('numeric', 'character', 'factor', 'numeric', 'numeric'))
 summary(pollution$pm25)
 #box(pollution)
-#histo(pollution)
+histo(pollution)
 #bar(pollution)
-scatter(pollution)
+#scatter(pollution)
